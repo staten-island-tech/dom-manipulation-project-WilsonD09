@@ -1,20 +1,28 @@
 const DOMSelectors = {
   header: document.querySelector("h1"),
-  button: document.querySelector(".btn"),
+  button: document.querySelector("#btn"),
   items: document.querySelectorAll("li"),
-  cardHeader: document.querySelector(".card-header"),
-  form: document.querySelector(".form"),
+  cardHeader: document.querySelector("card-header"),
+  form: document.querySelector("form"),
+  container: document.querySelector("container"),
 };
-
-DOMSelectors.button.addEventListener("click", function (event) {
-  console.log(event.target.parentElement);
-  event.target.parentElement.style.backgroundColor = "red";
-});
-DOMSelectors.form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  console.log(document.querySelector("input").value);
-});
 
 const liItem = DOMSelectors.items;
 const item = Array.from(liItem);
 item.forEach((el) => (el.style.color = "red"));
+
+DOMSelectors.form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  DOMSelectors.button.style.backgroundColor = "white";
+  setTimeout(function () {
+    DOMSelectors.button.style.backgroundColor = "lightgrey";
+  }, 50);
+  let iValue = document.querySelector("#input");
+  console.log(iValue.value);
+});
+
+DOMSelectors.container.insertAdjacentHTML(
+  "beforeend",
+  `<div class="card"><h2 class="card-header">${iValue.value}</h2></div>
+`
+);
