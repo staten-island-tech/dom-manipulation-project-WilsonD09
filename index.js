@@ -4,7 +4,7 @@ const DOMSelectors = {
   items: document.querySelectorAll("li"),
   cardHeader: document.querySelector(".card-header"),
   form: document.querySelector("form"),
-  container: document.querySelector("container"),
+  container: document.querySelector(".container"),
 };
 
 DOMSelectors.form.addEventListener("submit", function (event) {
@@ -13,9 +13,11 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   setTimeout(function () {
     DOMSelectors.button.style.backgroundColor = "lightgrey";
   }, 50);
-  const iValue = document.querySelector("#input");
+  const RValue = document.querySelector("#red");
+  const GValue = document.querySelector("#green");
+  const BValue = document.querySelector("#blue");
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
-    `<div class="card"><h2 class="card-header">${iValue.value}</h2></div>`
+    `<div class="card"><h2 class="card-header">${RValue.value}, ${GValue.value}, ${BValue.value}</h2></div>`
   );
 });
