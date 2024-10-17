@@ -13,11 +13,15 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   setTimeout(function () {
     DOMSelectors.button.style.backgroundColor = "lightgrey";
   }, 50);
-  const RValue = document.querySelector("#red");
-  const GValue = document.querySelector("#green");
-  const BValue = document.querySelector("#blue");
+  const RValue = document.querySelector("#red").value;
+  const GValue = document.querySelector("#green").value;
+  const BValue = document.querySelector("#blue").value;
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
-    `<div class="card"><h2 class="card-header">${RValue.value}, ${GValue.value}, ${BValue.value}</h2></div>`
+    `<div class="card"><h2 class="card-header">${RValue}, ${GValue}, ${BValue}</h2></div>`
   );
+  if (RValue.isInteger() && GValue.isInteger() && BValue.isInteger());
+  {
+    document.body.style.backgroundColor = (RValue, GValue, BValue);
+  }
 });

@@ -25,15 +25,14 @@ html, body, *{
     align-items: center;
     justify-content: space-around;
     margin-bottom: 5%;
-    background-color: rgb(255, 182, 193);
 }
 
-#red{
+#rred{
     color: red;
 }
-#blue{
+#bblue{
     color: blue;
 }
-#green{
+#ggreen{
     color: green;
 }
